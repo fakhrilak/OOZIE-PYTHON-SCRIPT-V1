@@ -34,12 +34,8 @@ while [ -h "${PRG}" ]; do
   link=`expr "$ls" : '.*-> \(.*\)$'`
   if expr "$link" : '/.*' > /dev/null; then
     PRG="$link"
-    # echo "=============================oozied.distro====================="
-    echo PGR
   else
     PRG=`dirname "${PRG}"`/"$link"
-    # echo "=============================oozied.distro====================="
-    echo PGR
   fi
 done
 
@@ -56,7 +52,6 @@ setup_catalina_opts() {
   echo "Using   CATALINA_OPTS:       ${CATALINA_OPTS}"
   
   catalina_opts="-Doozie.home.dir=${OOZIE_HOME}/oozie-server";
-  echo "================== INI PATH CATALINA OPTS${catalina_opts}"
   catalina_opts="${catalina_opts} -Doozie.config.dir=${OOZIE_CONFIG}";
   catalina_opts="${catalina_opts} -Doozie.log.dir=${OOZIE_LOG}";
   catalina_opts="${catalina_opts} -Doozie.data.dir=${OOZIE_DATA}";
@@ -92,9 +87,6 @@ setup_oozie() {
       exit -1
     fi
   fi
-  # echo "WARN: Oozie WAR has not been set up at '${CATALINA_BASE}/webapps', doing default set up"
-  # ${BASEDIR}/bin/oozie-setup.sh prepare-war
-  echo "FINISH SET UP"
   echo
 }
 

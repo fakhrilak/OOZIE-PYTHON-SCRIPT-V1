@@ -91,26 +91,15 @@ fi
 
 if [ "${OOZIE_CONFIG}" = "" ]; then
   export OOZIE_CONFIG=${OOZIE_HOME}/conf
-  # export OOZIE_CONFIG = /etc/oozie/conf
   print "Setting OOZIE_CONFIG:        ${OOZIE_CONFIG}"
   print "================================= INI LOG JARWO UWO UWO ${OOZIE_CONFIG}"
 else
   print "Using   OOZIE_CONFIG:        ${OOZIE_CONFIG}"
 fi
 oozie_config=${OOZIE_CONFIG}
-# echo "=======================================INI OOZIE CONFIG PATH ${OOZIE_CONFIG}"
-# if the configuration dir has a env file, source it
-#
 if [ -e "${OOZIE_CONFIG}/oozie-env.sh" ]; then
   print "Sourcing:                    ${OOZIE_CONFIG}/oozie-env.sh"
-  echo "===============================SETELAH SOURCHING ${OOZIE_CONFIG}"
-  # source ${OOZIE_CONFIG}/oozie-env.sh
-  # echo "===============================SEBELUM GREP ${OOZIE_CONFIG}"
   grep "^ *export " ${OOZIE_CONFIG}/oozie-env.sh | sed 's/ *export/  setting/'
-  # grep "^ *export " ${OOZIE_CONFIG}oozie-env.sh
-  #grep "^ *export /usr/odp/current/oozie-server/conf"
-  # echo "^ *export " ${OOZIE_CONFIG}oozie-env.sh | sed 's/ *export/  setting/"
-  echo "DONE EXEC OOZIE-ENV.SH"
 fi
 
 # verify that the sourced env file didn't change OOZIE_HOME
