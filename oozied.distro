@@ -49,7 +49,6 @@ BASEDIR=`cd ${BASEDIR}/..;pwd`
 source ${BASEDIR}/bin/oozie-sys.sh
 
 CATALINA=/usr/lib/bigtop-tomcat/bin/catalina.sh
-# echo "==============================CATALINA $CATALINA"
 setup_catalina_opts() {
   # The Java System properties 'oozie.http.port' and 'oozie.https.port' are not
   # used by Oozie, they are used in Tomcat's server.xml configuration file

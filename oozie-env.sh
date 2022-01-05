@@ -49,7 +49,8 @@ export OOZIE_ADMIN_PORT=11001
 # The base URL for callback URLs to Oozie
 #
 # export OOZIE_BASE_URL="http://${OOZIE_HTTP_HOSTNAME}:${OOZIE_HTTP_PORT}/oozie"
-export JAVA_LIBRARY_PATH=/usr/lib/hadoop/lib/native/Linux-amd64-64
+# export JAVA_LIBRARY_PATH=/usr/lib/hadoop/lib/native/Linux-amd64-64
+export JAVA_LIBRARY_PATH=/usr/lib/jvm
 # export CLASS_PATH=/usr/odp/0.2.0.0-03/oozie/libserver/oozie-sharelib-oozie-5.2.0-ODI.jar
 # At least 1 minute of retry time to account for server downtime during
 # upgrade/downgrade
