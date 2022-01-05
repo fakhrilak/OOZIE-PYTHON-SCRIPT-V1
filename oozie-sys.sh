@@ -102,8 +102,8 @@ oozie_config=${OOZIE_CONFIG}
 # if the configuration dir has a env file, source it
 #
 if [ -e "${OOZIE_CONFIG}/oozie-env.sh" ]; then
-  # print "Sourcing:                    ${OOZIE_CONFIG}/oozie-env.sh"
-  # echo "===============================SETELAH SOURCHING ${OOZIE_CONFIG}"
+  print "Sourcing:                    ${OOZIE_CONFIG}/oozie-env.sh"
+  echo "===============================SETELAH SOURCHING ${OOZIE_CONFIG}"
   # source ${OOZIE_CONFIG}/oozie-env.sh
   # echo "===============================SEBELUM GREP ${OOZIE_CONFIG}"
   grep "^ *export " ${OOZIE_CONFIG}/oozie-env.sh | sed 's/ *export/  setting/'

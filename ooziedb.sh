@@ -40,19 +40,10 @@ OOZIEDB_OPTS="${OOZIEDB_OPTS} -Doozie.data.dir=${OOZIE_DATA}";
 OOZIEDB_OPTS="${OOZIEDB_OPTS} -Dderby.stream.error.file=${OOZIE_LOG}/derby.log"
 
 OOZIECPPATH="x"
-# echo "=====================================BASE DIR JARWO==============================="
-# echo $OOZIECPPATH
-# echo "=======================================HARUSNYA ADA=============================="
 for i in "${BASEDIR}/libtools/"*.jar; do
-  # echo "===============================BASE DIR DI DALAM FOR======================"
-  # echo $BASEDIR
   OOZIECPPATH="${OOZIECPPATH}:$i"
-  # echo "====================== INI I $i"
-  # echo "===============================OOZIE PATH======================"
-  # echo $OOZIECPPATH
 done
 for i in "${BASEDIR}/lib/"*.jar; do
-  # echo "================================ DIDALAM FOR KE 2 ${BASEDIR}/lib/*.jar"
   OOZIECPPATH="${OOZIECPPATH}:$i"
 done
 for i in "${BASEDIR}/libext/"*.jar; do
@@ -71,4 +62,6 @@ while [[ ${1} =~ ^\-D ]]; do
   shift
 done
 
+
 ${JAVA_BIN} ${OOZIEDB_OPTS} ${JAVA_PROPERTIES} -cp ${OOZIECPPATH} org.apache.oozie.tools.OozieDBCLI "${@}"
+echo "===========================================FINISH EXEC DB=========================================="

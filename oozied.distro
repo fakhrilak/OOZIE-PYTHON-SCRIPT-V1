@@ -54,8 +54,9 @@ setup_catalina_opts() {
   # used by Oozie, they are used in Tomcat's server.xml configuration file
   #
   echo "Using   CATALINA_OPTS:       ${CATALINA_OPTS}"
-
-  catalina_opts="-Doozie.home.dir=${OOZIE_HOME}";
+  
+  catalina_opts="-Doozie.home.dir=${OOZIE_HOME}/oozie-server";
+  echo "================== INI PATH CATALINA OPTS${catalina_opts}"
   catalina_opts="${catalina_opts} -Doozie.config.dir=${OOZIE_CONFIG}";
   catalina_opts="${catalina_opts} -Doozie.log.dir=${OOZIE_LOG}";
   catalina_opts="${catalina_opts} -Doozie.data.dir=${OOZIE_DATA}";

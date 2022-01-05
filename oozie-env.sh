@@ -55,4 +55,4 @@ export JAVA_LIBRARY_PATH=/usr/lib/jvm
 # At least 1 minute of retry time to account for server downtime during
 # upgrade/downgrade
 export OOZIE_CLIENT_OPTS="${OOZIE_CLIENT_OPTS} -Doozie.connection.retry.count=5 "
-# echo "=============================SEBELUM KE OOZIE CLIENT OPTS=========================="
+echo "=============================SEBELUM KE OOZIE CLIENT OPTS=========================="
